@@ -126,6 +126,27 @@
   gap: 32px;
   width: 100%;
   justify-items: center;
+  margin-top: 32px;
+}
+
+.cardLink {
+  text-decoration: none;
+  width: 100%;
+  max-width: 400px;
+  transition: transform 0.18s cubic-bezier(.4,0,.2,1);
+  border-radius: 16px;
+  display: block;
+}
+
+.cardLink:focus-visible {
+  outline: 2px solid #4a5cff;
+  outline-offset: 4px;
+}
+
+.cardLink:hover .athleteCard {
+  box-shadow: 0 8px 32px rgba(74,92,255,0.16);
+  transform: translateY(-4px) scale(1.03);
+  border-color: #4a5cff;
 }
 
 .landingDescription {
@@ -292,5 +313,94 @@
 
   .main {
     animation: fadeIn 1.2s cubic-bezier(.4,0,.2,1);
+  }
+}
+
+.aboutWrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 32px;
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.aboutCard {
+  background: var(--gray-alpha-100);
+  border-radius: 20px;
+  box-shadow: 0 6px 32px rgba(0,0,0,0.10);
+  padding: 32px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+  max-width: 500px;
+  width: 100%;
+  border: 1.5px solid var(--gray-alpha-200);
+}
+
+.aboutImage {
+  width: 110px;
+  height: 110px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 3px solid #a7bfff;
+  box-shadow: 0 2px 12px rgba(167,191,255,0.10);
+}
+
+.aboutName {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 8px;
+  text-align: center;
+  background: linear-gradient(90deg, #111 60%, #a7bfff 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.aboutDetails {
+  font-size: 1.15rem;
+  color: #444;
+  margin-bottom: 8px;
+  text-align: center;
+}
+
+.aboutHighlight {
+  font-size: 1.25rem;
+  color: #4a5cff;
+  font-weight: 600;
+  margin-bottom: 0;
+  text-align: center;
+}
+
+.aboutDescription {
+  font-size: 1.15rem;
+  color: #444;
+  text-align: center;
+  margin-top: 32px;
+  line-height: 1.5;
+  max-width: 500px;
+}
+
+@media (prefers-color-scheme: dark) {
+  .aboutCard {
+    background: var(--gray-alpha-100);
+    border: 1.5px solid var(--gray-alpha-200);
+    box-shadow: 0 6px 32px rgba(74,92,255,0.12);
+  }
+  .aboutName {
+    background: linear-gradient(90deg, #fff 60%, #4a5cff 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  .aboutDetails,
+  .aboutDescription {
+    color: #e3e6f3;
+  }
+  .aboutHighlight {
+    color: #a7bfff;
   }
 }

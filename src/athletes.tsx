@@ -4,6 +4,7 @@ export type Athlete = {
   age: number;
   event: string;
   splitTime: string;
+  id: string; // Added id for unique key
 };
 
 export const athletes: Athlete[] = [
@@ -14,6 +15,7 @@ export const athletes: Athlete[] = [
     age: 27,
     event: "800m Dash",
     splitTime: "1:57.36s",
+    id: "0"
   },
   {
     image:
@@ -22,6 +24,7 @@ export const athletes: Athlete[] = [
     age: 30,
     event: "400m Hurdles",
     splitTime: "47.81s",
+    id: "1"
   },
   {
     image:
@@ -30,6 +33,7 @@ export const athletes: Athlete[] = [
     age: 30,
     event: "Discus Throw",
     splitTime: "73.52m",
+    id: "2"
   },
   {
     image:
@@ -38,6 +42,7 @@ export const athletes: Athlete[] = [
     age: 25,
     event: "400m Dash",
     splitTime: "44.15s",
+    id: "3"
   },
   {
     image:
@@ -46,6 +51,7 @@ export const athletes: Athlete[] = [
     age: 27,
     event: "400m Dash",
     splitTime: "45.05",
+    id: "4"
   },
   {
     image:
@@ -53,7 +59,8 @@ export const athletes: Athlete[] = [
     name: "Kenny Bednarek",
     age: 26,
     event: "200m Dash",
-    splitTime: "52.34s",
+    splitTime: "19.68s",
+    id: "5"
   },
   {
     image:
@@ -61,7 +68,8 @@ export const athletes: Athlete[] = [
     name: "Cole Hocker",
     age: 24,
     event: "1500m Run",
-    splitTime: "52.34s",
+    splitTime: "3:27.65s",
+    id: "6"
   },
   {
     image:
@@ -70,6 +78,7 @@ export const athletes: Athlete[] = [
     age: 28,
     event: "400m Hurdles",
     splitTime: "46.54s",
+    id: "7"
   },
   {
     image:
@@ -78,6 +87,7 @@ export const athletes: Athlete[] = [
     age: 27,
     event: "800m Dash",
     splitTime: "1:57.36s",
+    id: "8"
   },
   {
     image:
@@ -86,6 +96,7 @@ export const athletes: Athlete[] = [
     age: 30,
     event: "400m Hurdles",
     splitTime: "47.81s",
+    id: "9"
   },
   {
     image:
@@ -94,6 +105,7 @@ export const athletes: Athlete[] = [
     age: 30,
     event: "Discus Throw",
     splitTime: "73.52m",
+    id: "10"
   },
   {
     image:
@@ -102,6 +114,7 @@ export const athletes: Athlete[] = [
     age: 25,
     event: "400m Dash",
     splitTime: "44.15s",
+    id: "11"
   },
   {
     image:
@@ -110,6 +123,7 @@ export const athletes: Athlete[] = [
     age: 27,
     event: "400m Dash",
     splitTime: "45.05",
+    id: "12"
   },
   {
     image:
@@ -117,7 +131,8 @@ export const athletes: Athlete[] = [
     name: "Kenny Bednarek",
     age: 26,
     event: "200m Dash",
-    splitTime: "52.34s",
+    splitTime: "19.68s",
+    id: "13"
   },
   {
     image:
@@ -125,7 +140,8 @@ export const athletes: Athlete[] = [
     name: "Cole Hocker",
     age: 24,
     event: "1500m Run",
-    splitTime: "52.34s",
+    splitTime: "3:27.65s",
+    id: "14"
   },
   {
     image:
@@ -134,5 +150,6 @@ export const athletes: Athlete[] = [
     age: 28,
     event: "400m Hurdles",
     splitTime: "46.54s",
+    id: "15"
   }
 ];
