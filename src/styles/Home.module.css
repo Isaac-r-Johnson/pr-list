@@ -8,10 +8,9 @@
 
   display: grid;
   grid-template-rows: 20px 1fr 20px;
-  align-items: center;
   justify-items: center;
   min-height: 100svh;
-  padding: 80px;
+  padding: 0px 80px 80px 80px;
   gap: 64px;
   font-family: var(--font-geist-sans);
 }
@@ -21,32 +20,23 @@
     --gray-rgb: 255, 255, 255;
     --gray-alpha-200: rgba(var(--gray-rgb), 0.145);
     --gray-alpha-100: rgba(var(--gray-rgb), 0.06);
-
-    --button-primary-hover: #ccc;
-    --button-secondary-hover: #1a1a1a;
   }
+}
+
+.heading{
+  font-size: 60px;
+  font-weight: 800;
 }
 
 .main {
   display: flex;
   flex-direction: column;
+  align-items: center;
+  width: 100%;
   gap: 32px;
   grid-row-start: 2;
 }
 
-.main ol {
-  font-family: var(--font-geist-mono);
-  padding-left: 0;
-  margin: 0;
-  font-size: 14px;
-  line-height: 24px;
-  letter-spacing: -0.01em;
-  list-style-position: inside;
-}
-
-.main li:not(:last-of-type) {
-  margin-bottom: 8px;
-}
 
 .main code {
   font-family: inherit;
@@ -56,56 +46,67 @@
   font-weight: 600;
 }
 
-.ctas {
-  display: flex;
-  gap: 16px;
-}
 
-.ctas a {
-  appearance: none;
-  border-radius: 128px;
-  height: 48px;
-  padding: 0 20px;
-  border: none;
-  border: 1px solid transparent;
-  transition:
-    background 0.2s,
-    color 0.2s,
-    border-color 0.2s;
-  cursor: pointer;
+.athleteCard {
+  background: var(--gray-alpha-100);
+  border-radius: 16px;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+  padding: 24px;
   display: flex;
   align-items: center;
-  justify-content: center;
-  font-size: 16px;
-  line-height: 20px;
-  font-weight: 500;
-}
-
-a.primary {
-  background: var(--foreground);
-  color: var(--background);
-  gap: 8px;
-}
-
-a.secondary {
-  border-color: var(--gray-alpha-200);
-  min-width: 158px;
-}
-
-.footer {
-  grid-row-start: 3;
-  display: flex;
   gap: 24px;
+  transition: box-shadow 0.2s, transform 0.2s;
+  cursor: pointer;
+  max-width: 400px;
+  border: 1px solid var(--gray-alpha-200);
 }
 
-.footer a {
-  display: flex;
-  align-items: center;
-  gap: 8px;
+.athleteCard:hover {
+  box-shadow: 0 8px 32px rgba(0,0,0,0.16);
+  transform: translateY(-4px) scale(1.03);
 }
 
-.footer img {
-  flex-shrink: 0;
+.athleteImage {
+  width: 72px;
+  height: 72px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 2px solid var(--gray-alpha-200);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+}
+
+.athleteInfo {
+  flex: 1;
+}
+
+.athleteName {
+  font-weight: 600;
+  font-size: 18px;
+  margin-bottom: 4px;
+}
+
+.athleteAge {
+  color: #888;
+  font-size: 14px;
+  margin-bottom: 8px;
+}
+
+.athleteEvent,
+.athleteSplit {
+  font-size: 15px;
+  margin-bottom: 4px;
+}
+
+.athleteSplit {
+  margin-bottom: 0;
+}
+
+.cardContainer {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 32px;
+  width: 100%;
+  justify-items: center;
 }
 
 /* Enable hover only on non-touch devices */
