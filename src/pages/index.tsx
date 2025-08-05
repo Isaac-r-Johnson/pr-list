@@ -1,8 +1,6 @@
 import Head from "next/head";
-import Image from "next/image";
 import styles from "@/styles/Home.module.css";
-import AthleteCard from "@/components/AthleteCard";
-import { athletes } from "@/athletes";
+import Link from "next/link";
 
 export default function Home() {
   return (
@@ -12,13 +10,19 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <div className={`${styles.page}`}>
+      <div className={styles.page}>
         <main className={styles.main}>
-          <h1 className={styles.heading}>Athlete PRs</h1>
-          <div className={styles.cardContainer}>
-            {athletes.map((athlete, idx) => (
-              <AthleteCard key={idx} {...athlete} />
-            ))}
+          <h1 className={styles.heading} style={{ textAlign: "center", marginBottom: "24px" }}>
+            Track Your Greatness
+          </h1>
+          <p className={styles.landingDescription}>
+            Discover and celebrate personal records of athletes.<br />
+            Explore achievements, track progress, and get inspired by the best performances in track and field.
+          </p>
+          <div className={styles.ctas}>
+            <Link href="/athletes" passHref legacyBehavior>
+              <a className={styles.primaryButton}>View Athlete PRs</a>
+            </Link>
           </div>
         </main>
       </div>
