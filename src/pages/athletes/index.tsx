@@ -1,10 +1,21 @@
 import Head from "next/head";
 import styles from "@/styles/Home.module.css";
 import AthleteCard from "@/components/AthleteCard";
-import { athletes } from "@/athletes";
+// import { athletes } from "@/athletes";
 import Link from "next/link";
+import { useEffect, useState } from "react";
 
 export default function Home() {
+  const [athletes, setAthletes] = useState([]);
+
+  useEffect(() => {
+    async function fetchAthletes() {
+      const response = await fetch("/api/athletes");
+      const data = await response.json();
+      setAthletes(data);
+    }
+    fetchAthletes();
+  }, []);
   return (
     <>
       <Head>
@@ -16,7 +27,7 @@ export default function Home() {
         <main className={styles.main}>
           <h1 className={styles.heading}>Athlete PRs</h1>
           <div className={styles.cardContainer}>
-            {athletes.map((athlete) => (
+            {athletes.map((athlete: any) => (
               <Link
                 href={`/athletes/${athlete.id}`}
                 key={athlete.id}
