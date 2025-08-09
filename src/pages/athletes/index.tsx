@@ -1,7 +1,6 @@
 import Head from "next/head";
 import styles from "@/styles/Home.module.css";
 import AthleteCard from "@/components/AthleteCard";
-// import { athletes } from "@/athletes";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 

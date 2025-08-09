@@ -1,3 +1,4 @@
+// Old file, used before the database was implemented
 export type Athlete = {
   image: string;
   name: string;
