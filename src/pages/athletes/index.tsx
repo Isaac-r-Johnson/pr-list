@@ -6,12 +6,14 @@ import { useEffect, useState } from "react";
 
 export default function Home() {
   const [athletes, setAthletes] = useState([]);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     async function fetchAthletes() {
       const response = await fetch("/api/athletes");
       const data = await response.json();
       setAthletes(data);
+      setLoading(false);
     }
     fetchAthletes();
   }, []);
@@ -25,7 +27,10 @@ export default function Home() {
       <div className={styles.page}>
         <main className={styles.main}>
           <h1 className={styles.heading}>Athlete PRs</h1>
-          <div className={styles.cardContainer}>
+          {loading ? (
+            <div className={styles.loader}></div>
+          ) : (
+            <div className={styles.cardContainer}>
             {athletes.map((athlete: any) => (
               <Link
                 href={`/athletes/${athlete.id}`}
@@ -36,6 +41,7 @@ export default function Home() {
               </Link>
             ))}
           </div>
+          )}
         </main>
       </div>
     </>
